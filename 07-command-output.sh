@@ -2,6 +2,6 @@
 
 date
 
-date %+F
+date +%F
 
 echo :Today's date: $DATE
