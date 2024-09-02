@@ -9,14 +9,13 @@ mkdir -p $LOGS_FOLDER
 
 
 USERID=$(id -u)
-
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
 
-CHECKROOT(){
+CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then
         echo -e "$R Please run this script with root priveleges $N" &>>$LOG_FILE
@@ -36,14 +35,13 @@ VALIDATE(){
 }
 
 USAGE(){
-    echo -e $R ""USAGE:: sudo sh 16-redirectors.sh package1 package2 ..."
+    echo -e "$R USAGE:: $N sudo sh 16-redirectors.sh package1 package2 ..."
     exit 1
 }
 
 CHECK_ROOT
 
-if [ $# -eq 0]
-
+if [ $# -eq 0 ]
 then 
     USAGE
 fi
@@ -59,7 +57,7 @@ do
         VALIDATE $? "Installing $package"
 
     else
-        echo -e"$package is alreday $Y installed nothing to do $N" &>>$LOG_FILE
+        echo -e "$package is alreday $Y installed nothing to do $N" &>>$LOG_FILE
     fi
 
 done
