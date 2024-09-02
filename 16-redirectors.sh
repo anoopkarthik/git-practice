@@ -39,25 +39,25 @@ USAGE(){
 
 CHECK_ROOT
 
-if [ $# -eq 0 ]
-then 
-    USAGE
-fi
+# if [ $# -eq 0 ]
+# then 
+#     USAGE
+# fi
 
-for package in $@ 
-do 
-    dnf list installed $package &>>$LOG_FILE
-    if [ $? -ne 0 ]
-    then
-         echo "$package is not installed , going to install it.."  &>>$LOG_FILE
+# for package in $@ 
+# do 
+#     dnf list installed $package &>>$LOG_FILE
+#     if [ $? -ne 0 ]
+#     then
+#          echo "$package is not installed , going to install it.."  &>>$LOG_FILE
 
-        dnf install $package -y &>>$LOG_FILE
+#         dnf install $package -y &>>$LOG_FILE
 
-        VALIDATE $? "Installing $package"
+#         VALIDATE $? "Installing $package"
 
-    else
-        echo -e "$package is already $Y installed nothing to do $N" &>>$LOG_FILE
-    fi
+#     else
+#         echo -e "$package is already $Y installed nothing to do $N" &>>$LOG_FILE
+#     fi
 
-done   
+# done   
    
