@@ -15,7 +15,6 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-#echo "User ID is: $USERID"
 
 CHECKROOT(){
     if [ $USERID -ne 0 ]
