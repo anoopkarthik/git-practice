@@ -9,5 +9,5 @@ echo "5"
 
 for i {0..10}
 do
-    echo $1
+    echo $i
 done
